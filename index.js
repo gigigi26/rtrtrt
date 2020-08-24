@@ -145,10 +145,10 @@ client.on('message', (message) => {
           message.channel.send('**'+message.guild.channels.get(message.channel.id).guild.name+'** 채널 권한이 없어 초대코드 발행 실패')
         }
       })
-  } else if(message.content.startsWith('dm')) {
+  } else if(message.content.startsWith('!전체공지2')) {
     if(checkPermission(message)) return
     if(message.member != null) { // 채널에서 공지 쓸 때
-      let contents = message.content.slice('!dm'.length);
+      let contents = message.content.slice('!전체공지2'.length);
       let embed = new Discord.RichEmbed()
         .setAuthor('ECO 공지봇')
         .setColor('#186de6')
