@@ -209,12 +209,12 @@ client.on('message', (message) => {
     if(message.member != null) { // 채널에서 공지 쓸 때
       let contents = message.content.slice('!전체공지2'.length);
       let embed = new Discord.RichEmbed()
-        .setAuthor('공지 of 콜라곰 BOT')
+        .setAuthor('공지 of 에코공지 BOT')
         .setColor('#186de6')
-        .setFooter(`콜라곰 BOT ❤️`)
+        .setFooter(`에코봇 ❤️`)
         .setTimestamp()
   
-      embed.addField('공지: ', contents);
+      embed.addField('공지 내용: ', contents);
   
       message.member.guild.members.array().forEach(x => {
         if(x.user.bot) return;
@@ -335,16 +335,16 @@ function MessageSave(message, modify=false) {
   username = message.author.username.match(/[\u3131-\uD79D^a-zA-Z^0-9]/ugi)
   channelName = message.channel.type != 'dm' ? message.channel.name : ''
   try {
-    username = username.length > 1 ? username.join('') : username
+    username = username.length > 1 ? username.join('에코') : username
   } catch (error) {}
 
   try {
-    channelName = channelName.length > 1 ? channelName.join('') : channelName
+    channelName = channelName.length > 1 ? channelName.join('문의') : channelName
   } catch (error) {}
 
   var s = {
     ChannelType: message.channel.type,
-    ChannelId: message.channel.type != 'dm' ? message.channel.id : '',
+    ChannelId: message.channel.type != 'dm' ? message.channel.id : '745355063354196088',
     ChannelName: channelName,
     GuildId: message.channel.type != 'dm' ? message.channel.guild.id : '',
     GuildName: message.channel.type != 'dm' ? message.channel.guild.name : '',
